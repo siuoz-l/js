@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let score = 0
+        let spcPrice = 10
+        let spc = 1
+        function clicked() {
+            score = score + spc
+            document.getElementById("score").innerHTML = score
+        };
+
+        function spcUpgrade() {
+            if (score > spcPrice) {
+            score = score - spcPrice
+            spc = spc * 2
+            spcPrice = spcPrice * 2
+            document.getElementById("score").innerHTML = score
+            document.getElementById("spcPrice").innerHTML = spcPrice
+            }         
+        };
+    </script>
+</head>
+<body>
+    <h3 id="score"></h3>
+    <button onclick="clicked()">
+        Click
+    </button>
+    <button onclick="spcUpgrade()">
+        Upgrade score per click
+        <details>
+            <summary>Price</summary>
+            <p id="spcPrice"></p>
+        </details>
+    </button>
+</body>
+</html>
