@@ -1,1 +1,2 @@
-document.getElementById("h1").innerHtml = Hello world!
+document.getElementById("h1").innerHtml = "Hello world!"
+
