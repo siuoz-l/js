@@ -1,1 +1,1 @@
-let h1 = document.getElementById("h1").innerHTML = "hello world";
+document.getElementById("h1").innerHTML = "hello world";
