@@ -8,6 +8,15 @@
     <script>
         document.getElementById("header1").innerHTML = "Hello woels"
     </script>
+    <div>
+        <p id="userName">404 - UNCOMPATIBLE</p>
+        <script>
+            var userName = localStorage.getItem("Siuozl_ProfileNAME");
+            window.onload = function() {
+                document.getElementById("userName").innerText = (userName)
+            }
+        </script>
+    </div>
 </head>
 <body>
     <h2 id="header1">helo world</h2>

@@ -8,6 +8,15 @@
     <script>
         document.write("Hi! This is my JavaScript section. Just click on any link below!")
     </script>
+    <div>
+        <p id="userName">404 - UNCOMPATIBLE</p>
+        <script>
+            var userName = localStorage.getItem("Siuozl_ProfileNAME");
+            window.onload = function() {
+                document.getElementById("userName").innerText = (userName)
+            }
+        </script>
+    </div>
 </head>
 <body>
     <a href="/js/clicker/index.html">Clicker</a>
