@@ -55,8 +55,6 @@ app.post('/process-message', async (req, res) => {
   res.send({ message: botResponse });
 });
 
-async function getBotResponse(userInput) {
-  // Implement your logic for generating a bot response here
   async function getBotResponse(userInput) {
     // Use a natural language processing library like Dialogflow or Wit.ai to analyze the user's input and generate a response
     const response = await analyzeUserInput(userInput);
@@ -79,4 +77,3 @@ async function getBotResponse(userInput) {
     return data;
   }
   
-}
