@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas Drawing Example</title>
+	<style>
+		canvas {
+			border: 1px solid black;
+            touch-action: none; /* disable default touch actions */
+		}
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="500" height="500"></canvas>
+
+	<script>
+		var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+
+		var isDrawing = false;
+
+		function startDrawing(e) {
+            e.preventDefault(); /* prevent default touch action */
+			isDrawing = true;
+			ctx.beginPath();
+			ctx.moveTo(e.touches[0].clientX - canvas.offsetLeft, e.touches[0].clientY - canvas.offsetTop);
+		}
+
+		function draw(e) {
+			if (isDrawing === true) {
+				ctx.lineTo(e.touches[0].clientX - canvas.offsetLeft, e.touches[0].clientY - canvas.offsetTop);
+				ctx.stroke();
+			}
+		}
+
+		function endDrawing(e) {
+			isDrawing = false;
+			ctx.closePath();
+		}
+
+		canvas.addEventListener("touchstart", startDrawing);
+		canvas.addEventListener("touchmove", draw);
+		canvas.addEventListener("touchend", endDrawing);
+
+		canvas.addEventListener("mousedown", startDrawing);
+		canvas.addEventListener("mousemove", draw);
+		canvas.addEventListener("mouseup", endDrawing);
+	</script>
+</body>
+</html>
