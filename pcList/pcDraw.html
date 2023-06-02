@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas Drawing Example</title>
+	<style>
+		canvas {
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="500" height="500"></canvas>
+
+	<script>
+		var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+
+		var isDrawing = false;
+
+		canvas.addEventListener("mousedown", function(e) {
+			isDrawing = true;
+			ctx.beginPath();
+			ctx.moveTo(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop);
+		});
+
+		canvas.addEventListener("mousemove", function(e) {
+			if (isDrawing === true) {
+				ctx.lineTo(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop);
+				ctx.stroke();
+			}
+		});
+
+		canvas.addEventListener("mouseup", function(e) {
+			isDrawing = false;
+			ctx.closePath();
+		});
+	</script>
+</body>
+</html>
