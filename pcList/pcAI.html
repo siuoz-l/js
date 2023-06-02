@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.8.0/dist/tf.min.js"></script>
+    <script>
+        // Define the model architecture
+const model = tf.sequential();
+model.add(tf.layers.conv2d({
+  inputShape: [28, 28, 1],
+  filters: 32,
+  kernelSize: 3,
+  activation: 'relu'
+}));
+model.add(tf.layers.maxPooling2d({ poolSize: [2, 2] }));
+model.add(tf.layers.flatten());
+model.add(tf.layers.dense({ units: 10, activation: 'softmax' }));
+
+// Compile the model with an optimizer and loss function
+model.compile({
+  optimizer: 'adam',
+  loss: 'categoricalCrossentropy',
+  metrics: ['accuracy']
+});
+
+// Load and preprocess the dataset
+const mnist = tf.data.mnist();
+const BATCH_SIZE = 64;
+const TRAIN_BATCHES = 150;
+
+const dsTrain = mnist.trainDataset().batch(BATCH_SIZE).take(TRAIN_BATCHES);
+
+// Train the model
+await model.fitDataset(dsTrain, {
+  epochs: 5,
+  callbacks: tfvis.show.fitCallbacks(
+    { name: 'Training Performance' },
+    ['loss', 'accuracy'],
+    { height: 200, callbacks: ['onEpochEnd'] }
+  )
+});
+
+// Evaluate the model on test data
+const dsTest = mnist.testDataset().batch(BATCH_SIZE);
+const [testLoss, testAcc] = await model.evaluateDataset(dsTest);
+console.log(`Test Loss: ${testLoss.toFixed(4)}, Test Accuracy: ${testAcc.toFixed(4)}`);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
