@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Platformer (plateJS)</title>
 </head>
+<style>
+    #player {
+        height: var(height);
+    }
+</style>
 <script>
+    var height = 0;
     let player = document.getElementById('player');
     let button = document.getElementById('btn');
     button.onclick = function (){
-        player.scrollHeight --;
+        height = height - 1;
+        player.style('height: var(height)');
     };
 </script>
 <body>
