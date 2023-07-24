@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+    <style>
+        #txt{
+            font-size: 40px;
+            font-family: cursive;
+        }
+        a {
+            background-color: aqua;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        var txtI = 0
+        let txtE = document.getElementById("txt");
+        document.onclick = btnClick;
+        function btnClick(){
+            txtI ++;
+            document.getElementById("idxTxt").innerText = txtI;
+            if (txtI == 1) {
+                document.getElementById("txt").innerText = "I don't get it.";
+            };
+            if (txtI == 2) {
+                document.getElementById("txt").innerText = "Hmm...";
+            };
+            if (txtI == 3) {
+                document.getElementById("txt").innerText = "...";
+            };
+            if (txtI == 4) {
+                document.getElementById("txt").innerText = "I have another idea.";
+            };
+            if (txtI == 5) {
+                document.getElementById("txt").innerText = "";
+            };
+            if (txtI == 19) {
+                document.getElementById("txt").innerText = "WHAT?? You are smart.";
+            };
+            if (txtI == 20) {
+                document.getElementById("txt").innerText = "Level 2 - FINISHED";
+                document.getElementById("aHREF").innerText = "Restart";
+                document.getElementById("bHREF").innerText = "Next level";
+            };
+        };
+    </script>
+</head>
+<body>
+    <p id="idxTxt"></p>
+    <p id="txt">Why are you still here?</p>
+    <a href="3.html" id="aHREF"></a>
+    <a href=dead.html" id="bHREF"></a>
+</body>
+</html>

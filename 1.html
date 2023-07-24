@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <style>
+        #txt{
+            font-size: 40px;
+            font-family: cursive;
+        }
+        a {
+            background-color: aqua;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        var txtI = 0
+        let txtE = document.getElementById("txt");
+        document.onclick = btnClick;
+        function btnClick(){
+            txtI ++;
+            document.getElementById("idxTxt").innerText = txtI;
+            if (txtI == 1) {
+                document.getElementById("txt").innerText = "Why?";
+            };
+            if (txtI == 2) {
+                document.getElementById("txt").innerText = "Just... Why?";
+            };
+            if (txtI == 3) {
+                document.getElementById("txt").innerText = "...";
+            };
+            if (txtI == 4) {
+                document.getElementById("txt").innerText = "I have an idea.";
+            };
+            if (txtI == 5) {
+                document.getElementById("txt").innerText = "Help me setup my game.";
+            };
+            if (txtI == 6) {
+                document.getElementById("txt").innerText = "Or give me 1,000$.";
+            };
+            if (txtI == 7) {
+                document.getElementById("txt").innerText = "Help me.";
+            };
+            if (txtI == 8) {
+                document.getElementById("txt").innerText = "So are you ready?";
+            };
+            if (txtI == 9) {
+                document.getElementById("txt").innerText = "Do what you can.";
+            };
+            if (txtI == 10) {
+                document.getElementById("txt").innerText = "";
+            };
+            if (txtI == 11) {
+                document.getElementById("txt").style.fontFamily = "monospace";
+                document.getElementById("txt").innerText = "button.game | Loading...";
+            };
+            if (txtI == 15) {
+                document.getElementById("txt").innerHTML = "button.game | added <br> narrator.game | Loading";
+            };
+            if (txtI == 18) {
+                document.getElementById("txt").innerHTML = "button.game | added <br> narrator.game | added";
+            };
+            if (txtI == 19) {
+                document.getElementById("txt").style.fontFamily = "cursive";
+                document.getElementById("txt").innerText = "... That was quick.";
+            };
+            if (txtI == 20) {
+                document.getElementById("txt").innerText = "Level 1 - FINISHED";
+                document.getElementById("aHREF").innerText = "Next Level";
+            };
+        };
+    </script>
+</head>
+<body>
+    <p id="idxTxt"></p>
+    <p id="txt">No! I was building a game! Why did you keep doing it? [CLICK]</p>
+    <a href="2.html" id="aHREF"></a>
+</body>
+</html>

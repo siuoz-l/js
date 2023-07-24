@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        #txt{
+            font-size: 40px;
+            font-family: cursive;
+        }
+        a {
+            background-color: aqua;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        var txtI = 0
+        let txtE = document.getElementById("txt");
+        function btnClick(){
+            txtI ++;
+            document.getElementById("idxTxt").innerText = txtI;
+            if (txtI == 1) {
+                document.getElementById("txt").innerText = "Oh! Yep. That's a button.";
+            };
+            if (txtI == 2) {
+                document.getElementById("txt").innerText = "Ok.";
+            };
+            if (txtI == 3) {
+                document.getElementById("txt").innerText = "...";
+            };
+            if (txtI == 4) {
+                document.getElementById("txt").innerText = "......";
+            };
+            if (txtI == 5) {
+                document.getElementById("txt").innerText = "Stop.";
+            };
+            if (txtI == 6) {
+                document.getElementById("txt").innerText = "Now where is it?";
+                document.getElementById("btn").innerText = "This is not the right button"
+            };
+            if (txtI == 7) {
+                document.getElementById("txt").innerText = "Now where is it?";
+                document.getElementById("btn").innerText = "Button"
+            };
+            if (txtI == 8) {
+                document.getElementById("txt").innerText = "That was not funny.";
+            };
+            if (txtI == 9) {
+                document.getElementById("txt").innerText = "You know what? Do it. I don't care anymore.";
+            };
+            if (txtI == 10) {
+                document.getElementById("txt").innerText = "Yep.";
+            };
+            if (txtI == 11) {
+                document.getElementById("txt").innerText = "";
+            };
+            if (txtI == 15) {
+                document.getElementById("txt").innerText = "Well, here ya go.";
+                document.getElementById("btn").innerText = "You won";
+            };
+            if (txtI == 15) {
+                document.getElementById("txt").innerText = "Level 0 - FINISHED";
+                document.getElementById("btn").innerText = "";
+                document.getElementById("aHREF").innerText = "Next Level";
+            };
+        };
+    </script>
+</head>
+<body>
+    <p id="idxTxt"></p>
+    <p id="txt">Welcome.</p>
+    <a href="1.html" id="aHREF"></a>
+    <button id="btn" onclick="btnClick()">Button</button>
+</body>
+</html>
